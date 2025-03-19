@@ -1,0 +1,137 @@
+/* HotelDetails.css */
+.hotel-container {
+  display: flex;
+  /* justify-content: space-between; Spreads content evenly */
+  align-items: flex-start;
+  width: 100vw; /* Takes full screen width */
+  padding: 40px 5%;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .hotel-container {
+    flex-direction: row;
+  }
+}
+
+/* Hotel Image */
+.hotel-image {
+  width: 100%;
+  max-height: 600px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+@media (min-width: 768px) {
+  .hotel-image {
+    width: 50%;
+    max-height: 600px;
+  }
+}
+
+/* Hotel Info */
+.hotel-info {
+  padding: 20px;
+  flex: 1;
+}
+
+.hotel-name {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.hotel-location {
+  color: #555;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+/* Pricing */
+.hotel-price {
+  font-size: 22px;
+  font-weight: bold;
+  color: #e63946;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: #777;
+  font-size: 18px;
+  margin-left: 5px;
+}
+
+/* .discount {
+  color: green;
+  font-size: 16px;
+} */
+
+/* Amenities */
+.amenities-container {
+  align-self: flex-start; /* Moves the list to the left */
+  width: 100%; /* Ensures it takes full width */
+  max-width: 350px; /* Adjust width as needed */
+  margin-left: -890px; /* Moves it left */
+  margin-top: -70px;
+}
+.amenities-title {
+  font-size: 18px;
+
+  margin-top: 15px;
+}
+
+.amenities-list {
+  list-style: none;
+  padding: 0;
+}
+
+.amenities-list li {
+  background: #f4f4f4;
+  padding: 8px;
+  margin: 5px 0;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+/* Check-in & Check-out */
+.check-in-out {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+}
+
+.check-in-out label {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.check-in-out input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 5px;
+  width: 100%;
+}
+
+/* Book Now Button */
+.book-now {
+  width: 100%;
+  padding: 12px;
+  background: #e63946;
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: -50px; /* Increase negative margin */
+  position: relative; /* Ensures positioning works */
+  top: -80px; /* Moves it higher */
+}
+
+.book-now:hover {
+  background: #d62839;
+}

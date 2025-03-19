@@ -1,0 +1,139 @@
+/* Apply full-screen background image */
+.login-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: url("C:/Users/suhan/OneDrive/Desktop/finalproject2025UI/finalproj/public/loginpagehotel.jpg")
+    no-repeat center center/cover;
+  position: relative;
+  /* background:rgba(11,44,35,255); */
+}
+
+/* Dark overlay for readability */
+.login-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Center the login form */
+.login-form-container {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  width: 350px;
+}
+
+/* Header text */
+.login-title {
+  font-size: 2rem;
+  color: white;
+  font-family: "Playfair Display", serif;
+  margin-bottom: 1rem;
+}
+
+/* Toggle buttons */
+.toggle-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+.toggle-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.toggle-btn.active {
+  background: #007bff;
+  color: white;
+}
+
+.toggle-btn:not(.active) {
+  background: #ddd;
+  color: black;
+}
+
+/* Input fields */
+.login-input {
+  width: 100%;
+  max-width: 300px; /* Adjust based on the design */
+  padding: 10px;
+  margin: 8px auto;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  outline: none;
+  display: block;
+}
+/* Placeholder text color */
+.login-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Login button */
+.login-button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: black;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.login-button {
+  width: 100%;
+  max-width: 300px;
+}
+.login-form-container {
+  width: 400px; /* Adjust width as needed */
+  max-width: 90%;
+  padding: 2rem;
+  text-align: center;
+}
+
+.login-button:hover {
+  background: linear-gradient(45deg, #ff6a4d, #ff9a76);
+}
+
+/* Sign-up text */
+.signup-text {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: white;
+}
+
+.signup-text a {
+  color: #ffb74d;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.signup-text a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 600px) {
+  .login-form-container {
+    width: 90%;
+  }
+}

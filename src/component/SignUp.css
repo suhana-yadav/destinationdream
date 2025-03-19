@@ -1,0 +1,134 @@
+/* Apply full-screen background image */
+.signup-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: url("C:/Users/suhan/OneDrive/Desktop/finalproject2025UI/finalproj/public/loginpagehotel.jpg")
+    no-repeat center center/cover;
+  position: relative;
+}
+
+/* Dark overlay for readability */
+.signup-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Center the signup form */
+.signup-form-container {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  width: 350px;
+}
+
+/* Header text */
+.signup-title {
+  font-size: 2rem;
+  color: white;
+  font-family: "Playfair Display", serif;
+  margin-bottom: 1rem;
+}
+
+/* Input fields */
+.signup-input {
+  width: 100%;
+  max-width: 300px;
+  padding: 10px;
+  margin: 8px auto;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  outline: none;
+  display: block;
+}
+
+/* Placeholder text color */
+.signup-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Signup button */
+.signup-button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: rgb(22, 15, 13);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.signup-button {
+  width: 100%;
+  max-width: 300px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.signup-form-container {
+  width: 400px;
+  max-width: 90%;
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.signup-button:hover {
+  background: black;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+/* Login text */
+.login-text {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: white;
+}
+
+.login-text a {
+  color: #ffb74d;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-text a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+@media (max-width: 600px) {
+  .signup-form-container {
+    width: 90%;
+  }
+}
+.toggle-btn.active {
+  background: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.toggle-btn:not(.active) {
+  background: #ddd;
+  color: black;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
