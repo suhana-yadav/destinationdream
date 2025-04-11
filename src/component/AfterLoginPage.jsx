@@ -8,7 +8,7 @@ const AfterLoginPage = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedRating, setSelectedRating] = useState(""); // ✅ Added missing useState
   const [showSidebar, setShowSidebar] = useState(false);
-
+  const [isLoading, setIsLoading] = useState(true);
   // ✅ Fetch hotels from API
   useEffect(() => {
     axios
@@ -21,7 +21,8 @@ const AfterLoginPage = () => {
         console.error("Error fetching hotels:", error);
         setHotels([]); // Prevents crashes
       });
-  }, []);
+    
+  } , [] );
 
   // ✅ Function to render stars based on rating
   const renderStars = (rating) => {
@@ -103,12 +104,7 @@ const AfterLoginPage = () => {
         </button>
         <ul>
           <li onClick={() => navigate("/booked-hotels")}>Booked Hotels</li>
-          <li onClick={() => alert("Filtering by Price...")}>
-            Filter by Price
-          </li>
-          <li onClick={() => alert("Filtering by Rating...")}>
-            Filter by Rating
-          </li>
+          <li onClick={() => navigate("/payments-done")}>Payments</li>
           <li onClick={handleLogout} className="logout-option">
             Logout
           </li>
@@ -144,7 +140,13 @@ const AfterLoginPage = () => {
               </div>
             ))
           ) : (
-            <p className="no-results">No hotels found...</p>
+            <p className="no-results">
+              <div class="d-flex justify-content-center">
+                <div class="spinner-border" role="status">
+                  <span class="sr-only">Loading...</span>
+                </div>
+              </div>
+            </p>
           )}
         </div>
       </div>

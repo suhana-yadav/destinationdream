@@ -108,5 +108,48 @@
   border-radius: 5px;
   cursor: pointer;
 }
+/* Container for action buttons */
+.actionContainer {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Pay Now Button */
+.updateButton {
+  background-color: #3b82f6;
+  color: white;
+  font-weight: 600;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Cancel Button */
+.cancelButton {
+  background-color: #ef4444;
+  color: white;
+  font-weight: 600;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Payment Done Button */
+.paidButton {
+  background:rgb(22, 164, 74);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  
+  margin-right: 5px;
+}
+.bookedHotelsList {
+  max-height: 80vh;
+  overflow-y: auto;
+}
 
 

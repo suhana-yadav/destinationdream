@@ -8,13 +8,14 @@ import LoginChoice from "./component/Login";
 import "./App.css";
 import HomePage from "./component/HomePage";
 import SignUp from "./component/SignUp";
-import AuthPage from "./component/AdminLoginSignUp";
+import AdminAuthPage from "./component/AdminAuthPage";
 import AfterLoginPage from "./component/AfterLoginPage";
 import HotelList from "./component/HotelList";
 import RoomDetails from "./component/RoomDetails";
 import HotelDetails from "./component/HotelDetails";
 import BookedHotelsPage from "./component/BookedHotelsPage";
 import PaymentPage from "./component/PaymentPage";
+import AdminDashboard from "./component/AdminDashboard";
 
 function App() {
   return (
@@ -30,6 +31,8 @@ function App() {
           <Route path="/payment" element={<PaymentPage />} />
           <Route path="/room/:roomId" element={<RoomDetails />} />
           <Route path="/booked-hotels" element={<BookedHotelsPage />} />
+          <Route path="/adminlogin" element={<AdminAuthPage />} />
+          <Route path="/admin-dashboard" element={<AdminDashboard />} />
         </Routes>
       </Router>
     </>

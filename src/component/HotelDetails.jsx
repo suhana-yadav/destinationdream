@@ -45,7 +45,7 @@ const HotelDetails = () => {
           `http://localhost:8083/rooms/available/${hotelId}`
         );
         const data = await response.json();
-        console.log("Fetched rooms data:", data); // ✅ Debugging Log
+        console.log("Fetched rooms data:", data); 
         if (!data) {
           throw new Error("No data received from the API.");
         }
@@ -76,8 +76,8 @@ const HotelDetails = () => {
 
     return nights > 0 ? nights * selectedRoomPrice : selectedRoomPrice;
   };
-  const handleBooking = () => {
-    const customerId = localStorage.getItem("customerId"); // Retrieve stored customer ID
+  const handleBooking = async () => {
+    const customerId = localStorage.getItem("customerId");
 
     if (!selectedRoom || !checkInDate || !checkOutDate) {
       alert("Please select a room and enter valid dates.");
@@ -96,14 +96,35 @@ const HotelDetails = () => {
       checkOutDate,
       totalPrice: calculateTotalPrice(),
       customerId,
-      paymentStatus: "PENDING", // Default status
-      reservationStatus: "CONFIRMED", // Default status
+      paymentStatus: "PENDING",
+      reservationStatus: "CONFIRMED",
     };
 
-    console.log("Redirecting to Payment Page with data:", bookingData);
+    try {
+      const response = await fetch("http://localhost:8083/reservations/add", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(bookingData),
+      });
 
-    // Redirecting to the payment page with booking data
-    navigate("/payment", { state: { bookingData } });
+      if (!response.ok) {
+        const errorMessage = await response.text();
+        throw new Error(`Failed to create reservation: ${errorMessage}`);
+      }
+
+      const result = await response.json();
+      alert(
+        `Booking successful! 🎉 Your reservation ID: ${result.reservationId}`
+      );
+
+      // Redirect to Booked Hotels page after successful booking
+      navigate("/booked-hotels");
+    } catch (error) {
+      console.error("Error during booking:", error);
+      alert("Room is already booked");
+    }
   };
 
   return (
@@ -160,7 +181,7 @@ const HotelDetails = () => {
           <p className="hotel-location">
             {hotel?.address}, {hotel?.location}
           </p>
-          <p className="hotel-price">₹ {calculateTotalPrice()}</p>
+          <p className="hotel-price">₹{calculateTotalPrice()}</p>
           <div className="check-in-out">
             <label>Check-In:</label>
             <input

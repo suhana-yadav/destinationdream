@@ -1,111 +1,115 @@
-Global Styles body {
-  margin: 0;
-  padding: 0;
-  font-family: "Poppins", sans-serif;
-  background-color: #002118; /* Dark green background */
-  color: #c1e1c1; /* Soft green text */
+/* Full-screen background */
+.auth-container {
   display: flex;
+  align-items: center;
   justify-content: center;
-  align-items: center;
   height: 100vh;
+  background: url("https://source.unsplash.com/1600x900/?hotel,lobby") no-repeat center center/cover;
+ position: relative;
 }
 
-/* Container */
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 80%;
-  max-width: 1200px;
-  background: #002118;
-  padding: 40px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-}
+/* Optional: add your own image in public folder as adminloginbg.jpg */
+/* You can change the URL to a remote one if needed */
 
-/* Left Panel (Form Box) */
-.form-box {
-  width: 45%;
-  padding: 30px;
-  border: 2px solid #ffffff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 20px;
-  color: #86c9a8;
-}
-
-/* Form Inputs */
-.input-field {
+/* Dark overlay */
+.auth-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
   width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border: none;
-  border-bottom: 2px solid #ffffff;
-  background: transparent;
-  outline: none;
-  font-size: 16px;
+  background:  #243b55;
+  z-index: 1;
+}
+
+/* Admin Form Container */
+.auth-box {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  width: 400px;
+  max-width: 90%;
+  color: white;
+}
+
+/* Heading */
+.auth-box h2 {
+  font-size: 2rem;
+  font-family: "Playfair Display", serif;
+  margin-bottom: 1.5rem;
   color: #ffffff;
 }
 
-.input-field::placeholder {
-  color: rgba(255, 255, 255, 0.6);
+/* Inputs */
+.auth-box input {
+  width: 100%;
+  max-width: 300px;
+  padding: 10px;
+  margin: 8px auto;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  outline: none;
+  display: block;
+}
+
+.auth-box input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
 }
 
 /* Button */
-.btn {
+.auth-box button {
   width: 100%;
+  max-width: 300px;
   padding: 12px;
-  background-color: #004d3c;
-  color: #ffffff;
+  margin-top: 10px;
   border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #14110f;
+  color: white;
   cursor: pointer;
-  font-size: 18px;
-  margin-top: 20px;
+  transition: 0.3s ease;
 }
 
-.btn:hover {
-  background-color: #00795d;
+.auth-box button:hover {
+  background: black;
 }
 
-/* Sign up link */
-.signup-link {
+/* Toggle link */
+.auth-box p {
   margin-top: 15px;
-  font-size: 14px;
+  font-size: 0.9rem;
 }
 
-.signup-link a {
-  color: #86c9a8;
-  text-decoration: none;
+.auth-box span {
+  color: #ffb74d;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-.signup-link a:hover {
+.auth-box span:hover {
   text-decoration: underline;
+  transition: 0.3s ease;
 }
 
-/* Right Panel (Image Section) */
+/* Optional right image panel */
 .image-section {
-  width: 50%;
-  background: url("https://source.unsplash.com/600x400/?beach,resort") no-repeat
-    center center;
-  background-size: cover;
-  height: 300px;
-  border-radius: 10px;
-  position: relative;
+  display: none; /* You can enable this and use a split layout */
 }
 
-/* Arched cutout effect */
-.image-section::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  /* height: 100%; */
-  background: #002118;
-  clip-path: ellipse(70% 50% at 50% 50%);
+/* Responsive */
+@media (max-width: 600px) {
+  .auth-box {
+    width: 90%;
+    padding: 2rem 1rem;
+  }
 }

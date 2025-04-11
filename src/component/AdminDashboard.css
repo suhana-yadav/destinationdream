@@ -1,0 +1,136 @@
+.admin-dashboard-container {
+  padding: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.admin-dashboard-title {
+  text-align: center;
+  color: #343a40;
+  margin-bottom: 2rem;
+}
+
+.admin-form {
+  display: grid;
+  gap: 1rem;
+  max-width: 500px;
+  margin: 0 auto 3rem auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+}
+
+.admin-form input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.admin-add-btn {
+  padding: 10px;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.admin-add-btn:hover {
+  background-color: #0056b3;
+}
+
+.admin-subheading {
+  margin-top: 2rem;
+  text-align: center;
+  color: #343a40;
+}
+
+.admin-hotel-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.admin-hotel-card {
+  background: #ffffff;
+  padding: 1rem;
+  border-radius: 8px;
+  width: 280px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.admin-hotel-img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.admin-delete-btn {
+  margin-top: 0.5rem;
+  background-color: #dc3545;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.admin-delete-btn:hover {
+  background-color: #c82333;
+}
+.admin-edit-btn {
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  background-color: #ffc107;
+  color: #000;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.admin-edit-btn:hover {
+  background-color: #e0a800;
+}
+
+.admin-edit-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.admin-edit-modal .admin-form {
+  background: white;
+  max-width: 500px;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+.admin-navbar {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.admin-navbar button {
+  background-color: #333;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
